@@ -1,3 +1,4 @@
+# ABSTRACT: MongoDB plugin for the Dancer micro framework
 package Dancer::Plugin::Mongo;
 
 use strict;
@@ -39,6 +40,15 @@ sub _slurp_settings {
     get '/widget/view/:id' => sub {
 	my $widget = mongo->database->table->find_one({ id => params->{id} });
     }
+
+=head1 DESCRIPTION
+
+Dancer::Plugin::Mongo provides a wrapper around L<MongoDB>. Add the appropriate
+configuraton options to your config.yml and then you can access a MongoDB database
+using the 'mongo' keyword.
+
+To query the database, use the standard MongoDB syntax, described in 
+L<MongoDB::Collection>.
 
 =head1 CONFIGURATON
 
