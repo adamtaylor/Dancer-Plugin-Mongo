@@ -1,3 +1,4 @@
 *.swp
 /{{$dist->name}}*
 .build
+Dancer-Plugin-Mongo*
