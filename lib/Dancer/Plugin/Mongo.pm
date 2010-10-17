@@ -52,23 +52,26 @@ L<MongoDB::Collection>.
 
 =head1 CONFIGURATON
 
-plugins:
-  Mongo:
-    host:
-    port:
-    username:
-    password:
-    w:
-    wtimeout:
-    auto_reconnect:
-    auto_connect:
-    timeout:
-    db_name:
-    query_timeout:
-    find_master:
+Connection details will be taken from your Dancer application config file, and
+should be specified as, for example:
+
+    plugins:
+	Mongo:
+	    host:
+	    port:
+	    username:
+	    password:
+	    w:
+	    wtimeout:
+	    auto_reconnect:
+	    auto_connect:
+	    timeout:
+	    db_name:
+	    query_timeout:
+	    find_master:
 
 All these configuration values are optional, full details are in the 
-L<Mongo::Connection> documentation.
+L<MongoDB::Connection> documentation.
 
 =cut
 
