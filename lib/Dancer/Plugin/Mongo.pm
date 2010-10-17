@@ -37,7 +37,7 @@ sub _slurp_settings {
     use Dancer::Plugin::Mongo;
 
     get '/widget/view/:id' => sub {
-	my $widget = mongo->database->widgets->find_one({ id => params->{id} });
+	my $widget = mongo->database->table->find_one({ id => params->{id} });
     }
 
 =head1 CONFIGURATON
@@ -57,8 +57,8 @@ plugins:
     query_timeout:
     find_master:
 
-All these configuration values are optional, full details are on the 
-Mongo::Connection page.
+All these configuration values are optional, full details are in the 
+L<Mongo::Connection> documentation.
 
 =cut
 
