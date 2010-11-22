@@ -38,7 +38,7 @@ sub _slurp_settings {
     use Dancer::Plugin::Mongo;
 
     get '/widget/view/:id' => sub {
-	my $widget = mongo->database->table->find_one({ id => params->{id} });
+	my $widget = mongo->database->collection->find_one({ id => params->{id} });
     }
 
 =head1 DESCRIPTION
@@ -53,7 +53,7 @@ L<MongoDB::Collection>.
 =head1 CONFIGURATON
 
 Connection details will be taken from your Dancer application config file, and
-should be specified as, for example:
+should be specified as follows:
 
     plugins:
 	Mongo:
