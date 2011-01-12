@@ -11,7 +11,7 @@ my $conn;
 
 ## return a connected MongoDB object
 register mongo => sub {
-    
+
     $conn ? $conn : $conn = MongoDB::Connection->new( _slurp_settings() ) ;
 
     return $conn;
@@ -23,22 +23,22 @@ sub _slurp_settings {
     
     my $args;
     for (qw/ host port username password w wtimeout auto_reconnect auto_connect
-	timeout db_name query_timeout find_master/) {
-	if (exists $settings->{$_}) {
-	    $args->{$_} = $settings->{$_};
-	}
+        timeout db_name query_timeout find_master/) {
+        if (exists $settings->{$_}) {
+            $args->{$_} = $settings->{$_};
+        }
     }
 
     return $args;
 }
 
 =head1 SYNOPSIS
-    
+
     use Dancer;
     use Dancer::Plugin::Mongo;
 
     get '/widget/view/:id' => sub {
-	my $widget = mongo->database->collection->find_one({ id => params->{id} });
+        my $widget = mongo->database->collection->find_one({ id => params->{id} });
     }
 
 =head1 DESCRIPTION
@@ -47,7 +47,7 @@ Dancer::Plugin::Mongo provides a wrapper around L<MongoDB>. Add the appropriate
 configuraton options to your config.yml and then you can access a MongoDB database
 using the 'mongo' keyword.
 
-To query the database, use the standard MongoDB syntax, described in 
+To query the database, use the standard MongoDB syntax, described in
 L<MongoDB::Collection>.
 
 =head1 CONFIGURATON
@@ -56,21 +56,21 @@ Connection details will be taken from your Dancer application config file, and
 should be specified as follows:
 
     plugins:
-	Mongo:
-	    host:
-	    port:
-	    username:
-	    password:
-	    w:
-	    wtimeout:
-	    auto_reconnect:
-	    auto_connect:
-	    timeout:
-	    db_name:
-	    query_timeout:
-	    find_master:
+        Mongo:
+            host:
+            port:
+            username:
+            password:
+            w:
+            wtimeout:
+            auto_reconnect:
+            auto_connect:
+            timeout:
+            db_name:
+            query_timeout:
+            find_master:
 
-All these configuration values are optional, full details are in the 
+All these configuration values are optional, full details are in the
 L<MongoDB::Connection> documentation.
 
 =cut
