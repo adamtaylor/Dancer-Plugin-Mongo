@@ -6,6 +6,8 @@ use warnings;
 use Dancer::Plugin;
 use MongoDB 0.38;
 
+our $VERSION = 0.03;
+
 my $settings = plugin_setting;
 my $conn;
 
@@ -21,7 +23,7 @@ register_plugin;
 
 sub _slurp_settings {
     
-    my $args;
+    my $args = {};
     for (qw/ host port username password w wtimeout auto_reconnect auto_connect
         timeout db_name query_timeout find_master/) {
         if (exists $settings->{$_}) {
