@@ -1,0 +1,20 @@
+Revision history for Perl module 'Dancer-Plugin-Mongo'
+
+0.04 ALEXW
+    Add this "Changes" file
+    Add a min perl
+    Add *~ to .gitignore
+
+0.03 2011-11-23 AJCT
+
+    Fix bug when not providing any config options
+    Add git repository meta plugin
+    Fix whitespace and tabbing errors
+
+0.01 & .02 2010-10-17 AJCT
+
+    Documentation edits
+    Return a hash_ref instead of trying to turn a string into a hash
+    Updated diag message
+    Fixed syntax error, add primitive test.
+    Initial commit
