@@ -6,7 +6,10 @@ use warnings;
 use Dancer::Plugin;
 use MongoDB 0.38;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
+
+use 5.006;
+# Note: possibly specify 5.8.8 since internet search suggests dancer circa 2011 required that.
 
 my $settings = plugin_setting;
 my $conn;
